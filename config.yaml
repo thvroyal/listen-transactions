@@ -1,0 +1,12 @@
+# infura project id
+INFURA_PROJECT_ID: 4dd245ab4e1e4529acbcd3b5a81d02d4
+
+# mainnet
+INFURA_MAINNET_HTTPS_URL: https://mainnet.infura.io/v3/
+INFURA_MAINNET_WSS_URL: wss://mainnet.infura.io/ws/v3/
+
+TOKEN_ADDRESS: "0x9B5988fB230a6E15eDB5dbd770cf732Cf7fC02cd"
+
+MAIN_WALLET: "0x13f4EA83D0bd40E75C8222255bc855a974568Dd4"
+
+WHITE_LIST: []
