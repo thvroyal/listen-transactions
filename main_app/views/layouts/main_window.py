@@ -50,10 +50,6 @@ class Ui_MainWindow(object):
         self.qline_http_provider_url.setPlaceholderText("")
         self.qline_http_provider_url.setObjectName("qline_http_provider_url")
         self.gridLayout_2.addWidget(self.qline_http_provider_url, 1, 0, 1, 1)
-        self.label_7 = QtWidgets.QLabel(self.groupBox)
-        self.label_7.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
-        self.label_7.setObjectName("label_7")
-        self.gridLayout_2.addWidget(self.label_7, 12, 0, 1, 1)
         self.qline_contract_abi = QtWidgets.QLineEdit(self.groupBox)
         self.qline_contract_abi.setMinimumSize(QtCore.QSize(0, 30))
         self.qline_contract_abi.setStyleSheet("QLineEdit {\n"
@@ -71,7 +67,7 @@ class Ui_MainWindow(object):
 "}")
         self.qline_contract_abi.setPlaceholderText("")
         self.qline_contract_abi.setObjectName("qline_contract_abi")
-        self.gridLayout_2.addWidget(self.qline_contract_abi, 15, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.qline_contract_abi, 13, 0, 1, 1)
         self.label = QtWidgets.QLabel(self.groupBox)
         self.label.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
         self.label.setObjectName("label")
@@ -147,24 +143,6 @@ class Ui_MainWindow(object):
         self.qline_withdrawal_wallet_secret_key.setPlaceholderText("")
         self.qline_withdrawal_wallet_secret_key.setObjectName("qline_withdrawal_wallet_secret_key")
         self.gridLayout_2.addWidget(self.qline_withdrawal_wallet_secret_key, 11, 0, 1, 1)
-        self.qline_contract_address = QtWidgets.QLineEdit(self.groupBox)
-        self.qline_contract_address.setMinimumSize(QtCore.QSize(0, 30))
-        self.qline_contract_address.setStyleSheet("QLineEdit {\n"
-"    background-color: rgba(255, 255, 255, .1);\n"
-"    border-radius: 5px;\n"
-"    border: 2px solid rgb(27, 29, 35);\n"
-"    padding-left: 10px;\n"
-"    color: rgb(255, 255, 255);\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(91, 101, 124);\n"
-"}")
-        self.qline_contract_address.setPlaceholderText("")
-        self.qline_contract_address.setObjectName("qline_contract_address")
-        self.gridLayout_2.addWidget(self.qline_contract_address, 13, 0, 1, 1)
         self.label_8 = QtWidgets.QLabel(self.groupBox)
         self.label_8.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
         self.label_8.setObjectName("label_8")
@@ -190,7 +168,7 @@ class Ui_MainWindow(object):
         self.label_9 = QtWidgets.QLabel(self.groupBox)
         self.label_9.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
         self.label_9.setObjectName("label_9")
-        self.gridLayout_2.addWidget(self.label_9, 14, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_9, 12, 0, 1, 1)
         self.qline_token_address = QtWidgets.QLineEdit(self.groupBox)
         self.qline_token_address.setMinimumSize(QtCore.QSize(0, 30))
         self.qline_token_address.setStyleSheet("QLineEdit {\n"
@@ -287,7 +265,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_7.setText(_translate("MainWindow", "Contract Address"))
         self.label.setText(_translate("MainWindow", "Http Provider Url"))
         self.label_5.setText(_translate("MainWindow", "Whitelist"))
         self.label_2.setText(_translate("MainWindow", "Websocket Provider Url"))

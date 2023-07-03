@@ -27,7 +27,6 @@ class MainWindow(QtWidgets.QMainWindow):
         whitelist = cfg['WHITELIST']
         withdrawal_wallet_address = cfg['WITHDRAWAL_WALLET_ADDRESS']
         withdrawal_wallet_secret_key = cfg['WITHDRAWAL_WALLET_SECRET_KEY']
-        contract_address = cfg['CONTRACT_ADDRESS']
         contract_abi = cfg['CONTRACT_ABI']
                 
         self.ui.qline_http_provider_url.setText(http_provider_url)
@@ -36,7 +35,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.qline_whitelist.setText(whitelist)
         self.ui.qline_withdrawal_wallet_address.setText(withdrawal_wallet_address)
         self.ui.qline_withdrawal_wallet_secret_key.setText(withdrawal_wallet_secret_key)
-        self.ui.qline_contract_address.setText(contract_address)
         self.ui.qline_contract_abi.setText(contract_abi)
     
     def connect_button_signals(self):
@@ -87,7 +85,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.qline_whitelist.setEnabled(enable)
         self.ui.qline_withdrawal_wallet_address.setEnabled(enable)
         self.ui.qline_withdrawal_wallet_secret_key.setEnabled(enable)
-        self.ui.qline_contract_address.setEnabled(enable)
         self.ui.qline_contract_abi.setEnabled(enable)
         
     def start(self):
@@ -105,9 +102,6 @@ class MainWindow(QtWidgets.QMainWindow):
             return
         if not self.ui.qline_withdrawal_wallet_secret_key.text():
             QtWidgets.QMessageBox.warning(self, "Warning", "Please enter withdrawal wallet secret key")
-            return
-        if not self.ui.qline_contract_address.text():
-            QtWidgets.QMessageBox.warning(self, "Warning", "Please enter contract address")
             return
         if not self.ui.qline_contract_abi.text():
             QtWidgets.QMessageBox.warning(self, "Warning", "Please enter contract abi")
