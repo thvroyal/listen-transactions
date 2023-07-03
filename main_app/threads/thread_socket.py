@@ -1,7 +1,6 @@
 import asyncio
 from ..utils.helpers import load_config
 from PyQt5 import QtCore
-import yaml
 from web3_proxy_providers import AsyncSubscriptionWebsocketProvider
 from collections import deque
 from datetime import datetime

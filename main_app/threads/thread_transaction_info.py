@@ -1,7 +1,6 @@
 from ..utils.helpers import load_config
 from web3 import Web3
 from PyQt5 import QtCore
-import yaml
 
 
 class ThreadTransactionInfo(QtCore.QThread):

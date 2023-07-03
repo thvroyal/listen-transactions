@@ -2,7 +2,6 @@ web3
 python-socks
 web3-proxy-providers
 PyYaml
-pycrypto
 telebot
 pandas
 PyQt5

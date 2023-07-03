@@ -1,5 +1,5 @@
 from ..layouts.main_window import Ui_MainWindow
-from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5 import QtWidgets
 from ...threads import ThreadSocket, ThreadTransactionInfo, ThreadTelegram
 from queue import Queue
 import pandas as pd
