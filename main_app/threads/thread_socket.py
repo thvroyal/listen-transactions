@@ -13,16 +13,16 @@ class ThreadSocket(QtCore.QThread):
         self.transaction_queue = transaction_queue
         
         cfg = load_config()
-        self.nodeHttpsUrl = cfg['INFURA_MAINNET_HTTPS_URL'] + cfg['INFURA_PROJECT_ID']
-        self.nodeWssUrl = cfg['INFURA_MAINNET_WSS_URL'] + cfg['INFURA_PROJECT_ID']
-        self.whiteList = cfg['WHITE_LIST']
+        self.nodeHttpsUrl = cfg['HTTP_PROVIDER_URL']
+        self.nodeWssUrl = cfg['WEBSOCKET_PROVIDER_URL']
+        self.whiteList = cfg['WHITELIST']
         self.token = token.lower()
         
         self.old_transaction_hashes = deque(maxlen=100)
         
     async def callback(self, subs_id: str, json_result):
         transaction_hash = json_result["transactionHash"]
-        if transaction_hash not in self.old_transaction_hashes:
+        if (transaction_hash not in self.old_transaction_hashes) and self.__is_running:
             self.old_transaction_hashes.append(transaction_hash)
             datetime_now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
             self.transaction_queue.put([datetime_now, transaction_hash])
@@ -60,4 +60,5 @@ class ThreadSocket(QtCore.QThread):
             loop.stop()
     
     def stop(self):
+        print("Stopped Thread Socket")
         self.__is_running = False

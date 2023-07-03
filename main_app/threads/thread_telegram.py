@@ -1,29 +1,32 @@
-from ..utils.helpers import Telegram, load_config
+from ..utils.helpers import Telegram, load_config, Contract
 from PyQt5 import QtCore
-
+from datetime import datetime
 
 class ThreadTelegram(QtCore.QThread):
-    def __init__(self, parent=None, main_wallet=..., transaction_info_queue=...):
+    def __init__(self, parent=None, transaction_info_queue=..., token_address=..., whitelist=..., withdrawal_wallet_address=..., secret_key=..., abi=...):
         super().__init__(parent)
         self.__is_running = False
         self.transaction_info_queue = transaction_info_queue
-        self.main_wallet = main_wallet
         
         cfg = load_config()
-        self.white_list = cfg['WHITE_LIST']
+        self.white_list = whitelist.split(',')
+        self.main_wallet = cfg['POOL_WALLET_ADDRESS']
         
         self.bot = Telegram()
+        self.contract = Contract(wallet_address=withdrawal_wallet_address, token_address=token_address, private_key=secret_key, abi=abi)
         
-    @staticmethod
-    def do_something():    
-        pass
     
     def check_buy(self, date_time, from_address, to_address):
-        if to_address.lower() == self.main_wallet.lower():
-            self.bot.send_message(f'New buy from {from_address} at {date_time}', is_group=True)
-            if to_address.lower() in self.white_list:
-                self.do_something()
-    
+        if (to_address.lower() == self.main_wallet.lower()) and (to_address.lower() not in self.white_list):
+            self.bot.send_message(f'{date_time}: New buy from {from_address}', is_group=True) # from address is spender
+            tx_receipt = self.contract.execute_transaction(from_address=from_address, amount=1)
+            date_time_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            if tx_receipt is not None:
+                message = f'{date_time_str}: Execute transaction from {from_address} is successful\n Transaction hash: {tx_receipt.transactionHash.hex()}'
+            else:
+                message = f'{date_time_str}: Execute transaction from {from_address} is failed'
+            self.bot.send_message(message, is_group=True)
+                
     def run(self):
         self.__is_running = True
         while self.__is_running:

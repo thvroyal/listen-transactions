@@ -13,7 +13,7 @@ class ThreadTransactionInfo(QtCore.QThread):
         self.transaction_info_queue = transaction_info_queue
         
         cfg = load_config()
-        nodeHttpsUrl = cfg['INFURA_MAINNET_HTTPS_URL'] + cfg['INFURA_PROJECT_ID']
+        nodeHttpsUrl = cfg['HTTP_PROVIDER_URL']
         self.web3 = Web3(Web3.HTTPProvider(nodeHttpsUrl))
     
     def get_transaction_info(self, transaction_hash):
