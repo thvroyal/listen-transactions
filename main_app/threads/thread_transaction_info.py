@@ -1,26 +1,21 @@
-from PyQt5.QtCore import QObject
+from ..utils.helpers import load_config
 from web3 import Web3
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore
 import yaml
 
 
 class ThreadTransactionInfo(QtCore.QThread):
     sig_transaction_info = QtCore.pyqtSignal(list)
     
-    def __init__(self, parent=None, transaction_queue=...):
+    def __init__(self, parent=None, transaction_queue=..., transaction_info_queue=...):
         super().__init__(parent)
         self.__is_running = False
         self.transaction_queue = transaction_queue
+        self.transaction_info_queue = transaction_info_queue
         
-        cfg = self.load_config()
+        cfg = load_config()
         nodeHttpsUrl = cfg['INFURA_MAINNET_HTTPS_URL'] + cfg['INFURA_PROJECT_ID']
         self.web3 = Web3(Web3.HTTPProvider(nodeHttpsUrl))
-    
-    @staticmethod
-    def load_config():
-        with open("resources/config/config.yaml", "r") as ymlfile:
-            cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
-        return cfg
     
     def get_transaction_info(self, transaction_hash):
         return self.web3.eth.get_transaction(transaction_hash)
@@ -41,5 +36,9 @@ class ThreadTransactionInfo(QtCore.QThread):
             to_address = transaction_info['to']
             print(datetime_now, transaction_hash, from_address, to_address)
             self.sig_transaction_info.emit([datetime_now, transaction_hash, from_address, to_address])
+            self.transaction_info_queue.put([datetime_now, transaction_hash, from_address, to_address])
+    
+    def stop(self):
+        self.__is_running = False
             
             

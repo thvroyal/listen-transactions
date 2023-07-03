@@ -1,7 +1,6 @@
 import asyncio
-import typing
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import QObject
+from ..utils.helpers import load_config
+from PyQt5 import QtCore
 import yaml
 from web3_proxy_providers import AsyncSubscriptionWebsocketProvider
 from collections import deque
@@ -14,7 +13,7 @@ class ThreadSocket(QtCore.QThread):
         self.__is_running = False
         self.transaction_queue = transaction_queue
         
-        cfg = self.load_config()
+        cfg = load_config()
         self.nodeHttpsUrl = cfg['INFURA_MAINNET_HTTPS_URL'] + cfg['INFURA_PROJECT_ID']
         self.nodeWssUrl = cfg['INFURA_MAINNET_WSS_URL'] + cfg['INFURA_PROJECT_ID']
         self.whiteList = cfg['WHITE_LIST']
@@ -22,12 +21,6 @@ class ThreadSocket(QtCore.QThread):
         
         self.old_transaction_hashes = deque(maxlen=100)
         
-    @staticmethod
-    def load_config():
-        with open("resources/config/config.yaml", "r") as ymlfile:
-            cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
-        return cfg
-
     async def callback(self, subs_id: str, json_result):
         transaction_hash = json_result["transactionHash"]
         if transaction_hash not in self.old_transaction_hashes:

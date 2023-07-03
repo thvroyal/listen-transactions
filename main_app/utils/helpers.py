@@ -1,10 +1,16 @@
 import json
 import telebot
+import yaml
 
+
+def load_config():
+    with open("resources/config/config.yaml", "r") as ymlfile:
+        cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
+    return cfg
 
 class Telegram:
     def __init__(self):
-        with open("telegram.json") as f:
+        with open("resources/config/telegram.json") as f:
             telegram_data = json.load(f)
         self.token = telegram_data["token"]
         self.id = telegram_data["id"]

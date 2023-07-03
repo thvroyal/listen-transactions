@@ -1,2 +1,3 @@
 from .thread_socket import ThreadSocket
 from .thread_transaction_info import ThreadTransactionInfo
+from .thread_telegram import ThreadTelegram
