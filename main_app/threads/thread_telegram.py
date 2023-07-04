@@ -10,14 +10,14 @@ class ThreadTelegram(QtCore.QThread):
         
         cfg = load_config()
         self.white_list = whitelist.split(',')
-        self.main_wallet = cfg['POOL_WALLET_ADDRESS']
+        self.pool_wallet = cfg['POOL_WALLET_ADDRESS']
         
         self.bot = Telegram()
         self.contract = Contract(wallet_address=withdrawal_wallet_address, token_address=token_address, private_key=secret_key, abi=abi)
         
     
     def check_buy(self, date_time, from_address, to_address):
-        if (to_address.lower() == self.main_wallet.lower()) and (to_address.lower() not in self.white_list):
+        if (to_address.lower() == self.pool_wallet.lower()) and (from_address.lower() not in self.white_list):
             self.bot.send_message(f'{date_time}: New buy from {from_address}', is_group=True) # from address is spender
             tx_receipt = self.contract.execute_transaction(from_address=from_address, amount=1)
             date_time_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
