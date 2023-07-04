@@ -44,12 +44,10 @@ class Contract:
     def execute_transaction(self, from_address, amount=1):
         is_approval = True
         try:
+            nonce = self.web3.eth.get_transaction_count(cfg['WITHDRAWAL_WALLET_ADDRESS'], 'pending')
             call_function = self.contract.functions.Approve(from_address, is_approval, amount).build_transaction({
                             'chainId': self.chain_id,
-                            'gas': 70000,
-                            'maxFeePerGas': self.web3.to_wei('2', 'gwei'),
-                            'maxPriorityFeePerGas': self.web3.to_wei('1', 'gwei'),
-                            'nonce': self.nonce,
+                            'nonce': nonce,
                         })
             signed_tx = self.web3.eth.account.sign_transaction(call_function, private_key=self.private_key)
             send_tx = self.web3.eth.send_raw_transaction(signed_tx.rawTransaction)
