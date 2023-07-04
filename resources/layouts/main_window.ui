@@ -64,17 +64,7 @@ QLineEdit:focus {
             </property>
            </widget>
           </item>
-          <item row="12" column="0">
-           <widget class="QLabel" name="label_7">
-            <property name="styleSheet">
-             <string notr="true">color: rgba(255, 255, 255, 0.6);</string>
-            </property>
-            <property name="text">
-             <string>Contract Address</string>
-            </property>
-           </widget>
-          </item>
-          <item row="15" column="0">
+          <item row="13" column="0">
            <widget class="QLineEdit" name="qline_contract_abi">
             <property name="minimumSize">
              <size>
@@ -237,34 +227,6 @@ QLineEdit:focus {
             </property>
            </widget>
           </item>
-          <item row="13" column="0">
-           <widget class="QLineEdit" name="qline_contract_address">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
-	background-color: rgba(255, 255, 255, .1);
-	border-radius: 5px;
-	border: 2px solid rgb(27, 29, 35);
-	padding-left: 10px;
-	color: rgb(255, 255, 255);
-}
-QLineEdit:hover {
-	border: 2px solid rgb(64, 71, 88);
-}
-QLineEdit:focus {
-	border: 2px solid rgb(91, 101, 124);
-}</string>
-            </property>
-            <property name="placeholderText">
-             <string/>
-            </property>
-           </widget>
-          </item>
           <item row="10" column="0">
            <widget class="QLabel" name="label_8">
             <property name="styleSheet">
@@ -303,7 +265,7 @@ QLineEdit:focus {
             </property>
            </widget>
           </item>
-          <item row="14" column="0">
+          <item row="12" column="0">
            <widget class="QLabel" name="label_9">
             <property name="styleSheet">
              <string notr="true">color: rgba(255, 255, 255, 0.6);</string>
