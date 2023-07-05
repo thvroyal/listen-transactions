@@ -33,7 +33,6 @@ class ThreadIntegrateApi(QtCore.QThread):
                 self.msleep(1)
                 continue
             new_transactions = []
-            current_transactions = []
             old_time = time.time()
             token_info = api_get_token_info(self.pair)
             if token_info is None:
@@ -46,7 +45,6 @@ class ThreadIntegrateApi(QtCore.QThread):
             for transaction_dict in all_transactions:
                 transaction = Transaction()
                 transaction.load_from_dict(transaction_dict)
-                current_transactions.append(transaction)
                 if transaction.timestamp < old_max_timestamp:
                     continue
                 if transaction.id in self.old_transaction_id:
@@ -55,8 +53,8 @@ class ThreadIntegrateApi(QtCore.QThread):
                 new_transactions.append(transaction)
                 self.old_transaction_id.append(transaction.id)
                 
-            old_max_timestamp = max([transaction.timestamp for transaction in current_transactions])
             if len(new_transactions) > 0:
+                old_max_timestamp = max([transaction.timestamp for transaction in new_transactions])
                 if self.is_call_transaction:
                     self.transaction_queue.put(new_transactions)
                 print(f"New transactions: {len(new_transactions)}")

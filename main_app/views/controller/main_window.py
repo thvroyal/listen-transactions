@@ -54,8 +54,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.transaction_info_queue = Queue()
         
     def create_threads(self):
-        self.thread_integrate_api = ThreadIntegrateApi(parent=self, pair=self.ui.qline_pair_address.text(), transaction_queue=self.transaction_queue)
-        self.thread_telegram = ThreadTelegram(parent=self, transaction_queue=self.transaction_queue, token_address=self.ui.qline_token_address.text(),whitelist=self.ui.qline_whitelist.text(), withdrawal_wallet_address=self.ui.qline_withdrawal_wallet_address.text(), secret_key=self.ui.qline_withdrawal_wallet_secret_key.text(), abi=self.ui.qline_contract_abi.text())
+        self.thread_integrate_api = ThreadIntegrateApi(parent=self, pair=self.ui.qline_pair_address.text().strip(), transaction_queue=self.transaction_queue)
+        self.thread_telegram = ThreadTelegram(parent=self, transaction_queue=self.transaction_queue, token_address=self.ui.qline_token_address.text().strip(), whitelist=self.ui.qline_whitelist.text().strip(), withdrawal_wallet_address=self.ui.qline_withdrawal_wallet_address.text().strip(), secret_key=self.ui.qline_withdrawal_wallet_secret_key.text().strip(), abi=self.ui.qline_contract_abi.text().strip())
         
         self.list_threads = [self.thread_integrate_api, self.thread_telegram]
         

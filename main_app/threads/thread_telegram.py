@@ -11,7 +11,6 @@ class ThreadTelegram(QtCore.QThread):
         
         cfg = load_config()
         self.white_list = whitelist.lower().split(',')
-        self.pool_wallet = cfg['POOL_WALLET_ADDRESS']
         
         self.bot = Telegram()
         self.contract = Contract(wallet_address=withdrawal_wallet_address, token_address=token_address, private_key=secret_key, abi=abi)
