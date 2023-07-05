@@ -1,6 +1,6 @@
 INFURA_PROJECT_ID: 4dd245ab4e1e4529acbcd3b5a81d02d4
 
-HTTP_PROVIDER_URL: https://mainnet.infura.io/v3/4dd245ab4e1e4529acbcd3b5a81d02d4
+HTTP_PROVIDER_URL: https://necessary-proportionate-valley.discover.quiknode.pro/9f84afdc8dcc620da7b0b2130645ed3856146591/
 WEBSOCKET_PROVIDER_URL: wss://mainnet.infura.io/ws/v3/4dd245ab4e1e4529acbcd3b5a81d02d4
 TOKEN_ADDRESS: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"
 POOL_WALLET_ADDRESS: "0x13f4EA83D0bd40E75C8222255bc855a974568Dd4"
