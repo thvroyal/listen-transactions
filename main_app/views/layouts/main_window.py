@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\self_project\listen-transactions\resources\layouts\main_window.ui'
+# Form implementation generated from reading ui file 'resources/layouts/main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -26,168 +26,6 @@ class Ui_MainWindow(object):
         self.groupBox_2.setObjectName("groupBox_2")
         self.gridLayout = QtWidgets.QGridLayout(self.groupBox_2)
         self.gridLayout.setObjectName("gridLayout")
-        self.groupBox = QtWidgets.QGroupBox(self.groupBox_2)
-        self.groupBox.setStyleSheet("border: none;")
-        self.groupBox.setTitle("")
-        self.groupBox.setObjectName("groupBox")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.groupBox)
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        self.qline_http_provider_url = QtWidgets.QLineEdit(self.groupBox)
-        self.qline_http_provider_url.setMinimumSize(QtCore.QSize(0, 30))
-        self.qline_http_provider_url.setStyleSheet("QLineEdit {\n"
-"    background-color: rgba(255, 255, 255, .1);\n"
-"    border-radius: 5px;\n"
-"    border: 2px solid rgb(27, 29, 35);\n"
-"    padding-left: 10px;\n"
-"    color: rgb(255, 255, 255);\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(91, 101, 124);\n"
-"}")
-        self.qline_http_provider_url.setPlaceholderText("")
-        self.qline_http_provider_url.setObjectName("qline_http_provider_url")
-        self.gridLayout_2.addWidget(self.qline_http_provider_url, 1, 0, 1, 1)
-        self.qline_contract_abi = QtWidgets.QLineEdit(self.groupBox)
-        self.qline_contract_abi.setMinimumSize(QtCore.QSize(0, 30))
-        self.qline_contract_abi.setStyleSheet("QLineEdit {\n"
-"    background-color: rgba(255, 255, 255, .1);\n"
-"    border-radius: 5px;\n"
-"    border: 2px solid rgb(27, 29, 35);\n"
-"    padding-left: 10px;\n"
-"    color: rgb(255, 255, 255);\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(91, 101, 124);\n"
-"}")
-        self.qline_contract_abi.setPlaceholderText("")
-        self.qline_contract_abi.setObjectName("qline_contract_abi")
-        self.gridLayout_2.addWidget(self.qline_contract_abi, 13, 0, 1, 1)
-        self.label = QtWidgets.QLabel(self.groupBox)
-        self.label.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
-        self.label.setObjectName("label")
-        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
-        self.label_5 = QtWidgets.QLabel(self.groupBox)
-        self.label_5.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
-        self.label_5.setObjectName("label_5")
-        self.gridLayout_2.addWidget(self.label_5, 6, 0, 1, 1)
-        self.label_2 = QtWidgets.QLabel(self.groupBox)
-        self.label_2.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
-        self.label_2.setObjectName("label_2")
-        self.gridLayout_2.addWidget(self.label_2, 2, 0, 1, 1)
-        self.qline_websocket_provider_url = QtWidgets.QLineEdit(self.groupBox)
-        self.qline_websocket_provider_url.setMinimumSize(QtCore.QSize(0, 30))
-        self.qline_websocket_provider_url.setStyleSheet("QLineEdit {\n"
-"    background-color: rgba(255, 255, 255, .1);\n"
-"    border-radius: 5px;\n"
-"    border: 2px solid rgb(27, 29, 35);\n"
-"    padding-left: 10px;\n"
-"    color: rgb(255, 255, 255);\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(91, 101, 124);\n"
-"}")
-        self.qline_websocket_provider_url.setPlaceholderText("")
-        self.qline_websocket_provider_url.setObjectName("qline_websocket_provider_url")
-        self.gridLayout_2.addWidget(self.qline_websocket_provider_url, 3, 0, 1, 1)
-        self.label_6 = QtWidgets.QLabel(self.groupBox)
-        self.label_6.setStyleSheet("color: rgba(255, 255, 255, 0.6);\n"
-"margin-top: 24px;")
-        self.label_6.setObjectName("label_6")
-        self.gridLayout_2.addWidget(self.label_6, 8, 0, 1, 1)
-        self.label_3 = QtWidgets.QLabel(self.groupBox)
-        self.label_3.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
-        self.label_3.setObjectName("label_3")
-        self.gridLayout_2.addWidget(self.label_3, 4, 0, 1, 1)
-        self.qline_whitelist = QtWidgets.QLineEdit(self.groupBox)
-        self.qline_whitelist.setMinimumSize(QtCore.QSize(0, 30))
-        self.qline_whitelist.setStyleSheet("QLineEdit {\n"
-"    background-color: rgba(255, 255, 255, .1);\n"
-"    border-radius: 5px;\n"
-"    border: 2px solid rgb(27, 29, 35);\n"
-"    padding-left: 10px;\n"
-"    color: rgb(255, 255, 255);\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(91, 101, 124);\n"
-"}")
-        self.qline_whitelist.setPlaceholderText("")
-        self.qline_whitelist.setObjectName("qline_whitelist")
-        self.gridLayout_2.addWidget(self.qline_whitelist, 7, 0, 1, 1)
-        self.qline_withdrawal_wallet_secret_key = QtWidgets.QLineEdit(self.groupBox)
-        self.qline_withdrawal_wallet_secret_key.setMinimumSize(QtCore.QSize(0, 30))
-        self.qline_withdrawal_wallet_secret_key.setStyleSheet("QLineEdit {\n"
-"    background-color: rgba(255, 255, 255, .1);\n"
-"    border-radius: 5px;\n"
-"    border: 2px solid rgb(27, 29, 35);\n"
-"    padding-left: 10px;\n"
-"    color: rgb(255, 255, 255);\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(91, 101, 124);\n"
-"}")
-        self.qline_withdrawal_wallet_secret_key.setPlaceholderText("")
-        self.qline_withdrawal_wallet_secret_key.setObjectName("qline_withdrawal_wallet_secret_key")
-        self.gridLayout_2.addWidget(self.qline_withdrawal_wallet_secret_key, 11, 0, 1, 1)
-        self.label_8 = QtWidgets.QLabel(self.groupBox)
-        self.label_8.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
-        self.label_8.setObjectName("label_8")
-        self.gridLayout_2.addWidget(self.label_8, 10, 0, 1, 1)
-        self.qline_withdrawal_wallet_address = QtWidgets.QLineEdit(self.groupBox)
-        self.qline_withdrawal_wallet_address.setMinimumSize(QtCore.QSize(0, 30))
-        self.qline_withdrawal_wallet_address.setStyleSheet("QLineEdit {\n"
-"    background-color: rgba(255, 255, 255, .1);\n"
-"    border-radius: 5px;\n"
-"    border: 2px solid rgb(27, 29, 35);\n"
-"    padding-left: 10px;\n"
-"    color: rgb(255, 255, 255);\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(91, 101, 124);\n"
-"}")
-        self.qline_withdrawal_wallet_address.setPlaceholderText("")
-        self.qline_withdrawal_wallet_address.setObjectName("qline_withdrawal_wallet_address")
-        self.gridLayout_2.addWidget(self.qline_withdrawal_wallet_address, 9, 0, 1, 1)
-        self.label_9 = QtWidgets.QLabel(self.groupBox)
-        self.label_9.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
-        self.label_9.setObjectName("label_9")
-        self.gridLayout_2.addWidget(self.label_9, 12, 0, 1, 1)
-        self.qline_token_address = QtWidgets.QLineEdit(self.groupBox)
-        self.qline_token_address.setMinimumSize(QtCore.QSize(0, 30))
-        self.qline_token_address.setStyleSheet("QLineEdit {\n"
-"    background-color: rgba(255, 255, 255, .1);\n"
-"    border-radius: 5px;\n"
-"    border: 2px solid rgb(27, 29, 35);\n"
-"    padding-left: 10px;\n"
-"    color: rgb(255, 255, 255);\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(91, 101, 124);\n"
-"}")
-        self.qline_token_address.setPlaceholderText("")
-        self.qline_token_address.setObjectName("qline_token_address")
-        self.gridLayout_2.addWidget(self.qline_token_address, 5, 0, 1, 1)
-        self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 1)
         self.groupBox_3 = QtWidgets.QGroupBox(self.groupBox_2)
         self.groupBox_3.setMinimumSize(QtCore.QSize(200, 0))
         self.groupBox_3.setAutoFillBackground(False)
@@ -235,6 +73,146 @@ class Ui_MainWindow(object):
 "}")
         self.btn_stop.setObjectName("btn_stop")
         self.gridLayout.addWidget(self.groupBox_3, 0, 1, 1, 1)
+        self.groupBox = QtWidgets.QGroupBox(self.groupBox_2)
+        self.groupBox.setStyleSheet("border: none;")
+        self.groupBox.setTitle("")
+        self.groupBox.setObjectName("groupBox")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.groupBox)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.label_9 = QtWidgets.QLabel(self.groupBox)
+        self.label_9.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
+        self.label_9.setObjectName("label_9")
+        self.gridLayout_2.addWidget(self.label_9, 10, 0, 1, 1)
+        self.qline_contract_abi = QtWidgets.QLineEdit(self.groupBox)
+        self.qline_contract_abi.setMinimumSize(QtCore.QSize(0, 30))
+        self.qline_contract_abi.setStyleSheet("QLineEdit {\n"
+"    background-color: rgba(255, 255, 255, .1);\n"
+"    border-radius: 5px;\n"
+"    border: 2px solid rgb(27, 29, 35);\n"
+"    padding-left: 10px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.qline_contract_abi.setPlaceholderText("")
+        self.qline_contract_abi.setObjectName("qline_contract_abi")
+        self.gridLayout_2.addWidget(self.qline_contract_abi, 11, 0, 1, 1)
+        self.label_5 = QtWidgets.QLabel(self.groupBox)
+        self.label_5.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
+        self.label_5.setObjectName("label_5")
+        self.gridLayout_2.addWidget(self.label_5, 4, 0, 1, 1)
+        self.qline_withdrawal_wallet_address = QtWidgets.QLineEdit(self.groupBox)
+        self.qline_withdrawal_wallet_address.setMinimumSize(QtCore.QSize(0, 30))
+        self.qline_withdrawal_wallet_address.setStyleSheet("QLineEdit {\n"
+"    background-color: rgba(255, 255, 255, .1);\n"
+"    border-radius: 5px;\n"
+"    border: 2px solid rgb(27, 29, 35);\n"
+"    padding-left: 10px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.qline_withdrawal_wallet_address.setPlaceholderText("")
+        self.qline_withdrawal_wallet_address.setObjectName("qline_withdrawal_wallet_address")
+        self.gridLayout_2.addWidget(self.qline_withdrawal_wallet_address, 7, 0, 1, 1)
+        self.label_8 = QtWidgets.QLabel(self.groupBox)
+        self.label_8.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
+        self.label_8.setObjectName("label_8")
+        self.gridLayout_2.addWidget(self.label_8, 8, 0, 1, 1)
+        self.label_6 = QtWidgets.QLabel(self.groupBox)
+        self.label_6.setStyleSheet("color: rgba(255, 255, 255, 0.6);\n"
+"margin-top: 24px;")
+        self.label_6.setObjectName("label_6")
+        self.gridLayout_2.addWidget(self.label_6, 6, 0, 1, 1)
+        self.qline_token_address = QtWidgets.QLineEdit(self.groupBox)
+        self.qline_token_address.setMinimumSize(QtCore.QSize(0, 30))
+        self.qline_token_address.setStyleSheet("QLineEdit {\n"
+"    background-color: rgba(255, 255, 255, .1);\n"
+"    border-radius: 5px;\n"
+"    border: 2px solid rgb(27, 29, 35);\n"
+"    padding-left: 10px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.qline_token_address.setPlaceholderText("")
+        self.qline_token_address.setObjectName("qline_token_address")
+        self.gridLayout_2.addWidget(self.qline_token_address, 1, 0, 1, 1)
+        self.qline_whitelist = QtWidgets.QLineEdit(self.groupBox)
+        self.qline_whitelist.setMinimumSize(QtCore.QSize(0, 30))
+        self.qline_whitelist.setStyleSheet("QLineEdit {\n"
+"    background-color: rgba(255, 255, 255, .1);\n"
+"    border-radius: 5px;\n"
+"    border: 2px solid rgb(27, 29, 35);\n"
+"    padding-left: 10px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.qline_whitelist.setPlaceholderText("")
+        self.qline_whitelist.setObjectName("qline_whitelist")
+        self.gridLayout_2.addWidget(self.qline_whitelist, 5, 0, 1, 1)
+        self.qline_withdrawal_wallet_secret_key = QtWidgets.QLineEdit(self.groupBox)
+        self.qline_withdrawal_wallet_secret_key.setMinimumSize(QtCore.QSize(0, 30))
+        self.qline_withdrawal_wallet_secret_key.setStyleSheet("QLineEdit {\n"
+"    background-color: rgba(255, 255, 255, .1);\n"
+"    border-radius: 5px;\n"
+"    border: 2px solid rgb(27, 29, 35);\n"
+"    padding-left: 10px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.qline_withdrawal_wallet_secret_key.setPlaceholderText("")
+        self.qline_withdrawal_wallet_secret_key.setObjectName("qline_withdrawal_wallet_secret_key")
+        self.gridLayout_2.addWidget(self.qline_withdrawal_wallet_secret_key, 9, 0, 1, 1)
+        self.label_3 = QtWidgets.QLabel(self.groupBox)
+        self.label_3.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
+        self.label_3.setObjectName("label_3")
+        self.gridLayout_2.addWidget(self.label_3, 0, 0, 1, 1)
+        self.qline_pair_address = QtWidgets.QLineEdit(self.groupBox)
+        self.qline_pair_address.setMinimumSize(QtCore.QSize(0, 30))
+        self.qline_pair_address.setStyleSheet("QLineEdit {\n"
+"    background-color: rgba(255, 255, 255, .1);\n"
+"    border-radius: 5px;\n"
+"    border: 2px solid rgb(27, 29, 35);\n"
+"    padding-left: 10px;\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.qline_pair_address.setPlaceholderText("")
+        self.qline_pair_address.setObjectName("qline_pair_address")
+        self.gridLayout_2.addWidget(self.qline_pair_address, 3, 0, 1, 1)
+        self.label_4 = QtWidgets.QLabel(self.groupBox)
+        self.label_4.setStyleSheet("color: rgba(255, 255, 255, 0.6);")
+        self.label_4.setObjectName("label_4")
+        self.gridLayout_2.addWidget(self.label_4, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 1)
         self.gridLayout_3.addWidget(self.groupBox_2, 0, 0, 1, 1)
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setStyleSheet("border: none;\n"
@@ -252,7 +230,7 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.label_10, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1105, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1105, 24))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -265,15 +243,14 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Http Provider Url"))
-        self.label_5.setText(_translate("MainWindow", "Whitelist"))
-        self.label_2.setText(_translate("MainWindow", "Websocket Provider Url"))
-        self.label_6.setText(_translate("MainWindow", "Withdrawal Wallet Address"))
-        self.label_3.setText(_translate("MainWindow", "Token Address "))
-        self.label_8.setText(_translate("MainWindow", "Withdrawal Wallet Secret Key"))
-        self.label_9.setText(_translate("MainWindow", "Contract ABI"))
         self.btn_start.setText(_translate("MainWindow", "Start"))
         self.btn_stop.setText(_translate("MainWindow", "Stop"))
+        self.label_9.setText(_translate("MainWindow", "Contract ABI"))
+        self.label_5.setText(_translate("MainWindow", "Whitelist"))
+        self.label_8.setText(_translate("MainWindow", "Withdrawal Wallet Secret Key"))
+        self.label_6.setText(_translate("MainWindow", "Withdrawal Wallet Address"))
+        self.label_3.setText(_translate("MainWindow", "Token Address "))
+        self.label_4.setText(_translate("MainWindow", "Pair Address "))
         self.label_10.setText(_translate("MainWindow", "History Transaction"))
 
 

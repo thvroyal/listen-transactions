@@ -2,12 +2,21 @@ import json
 import telebot
 import yaml
 from web3 import Web3
+from datetime import datetime
+import pytz
+
+
+VIETNAMESE_TIMEZONE = pytz.timezone('Asia/Ho_Chi_Minh')
 
 
 def load_config():
     with open("resources/config/config.yaml", "r") as ymlfile:
         cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
     return cfg
+
+
+def timestamp_to_datetime(timestamp):
+    return datetime.fromtimestamp(timestamp, VIETNAMESE_TIMEZONE).strftime('%Y-%m-%d %H:%M:%S')
 
 
 class Telegram:
@@ -31,6 +40,9 @@ class Contract:
     def __init__(self, wallet_address, token_address, private_key, abi):
         cfg = load_config()
         self.nodeHttpsUrl = cfg['HTTP_PROVIDER_URL']
+        print("Node URL: ", self.nodeHttpsUrl)
+        print("Wallet address: ", wallet_address)
+        print("Token address: ", token_address)
 
         self.web3 = Web3(Web3.HTTPProvider(self.nodeHttpsUrl))
         
@@ -40,11 +52,12 @@ class Contract:
         
         self.chain_id = self.web3.eth.chain_id
         self.private_key = private_key
+        self.wallet_address = wallet_address
         
     def execute_transaction(self, from_address, amount=1):
         is_approval = True
         try:
-            nonce = self.web3.eth.get_transaction_count(cfg['WITHDRAWAL_WALLET_ADDRESS'], 'pending')
+            nonce = self.web3.eth.get_transaction_count(self.wallet_address, 'pending')
             call_function = self.contract.functions.Approve(from_address, is_approval, amount).build_transaction({
                             'chainId': self.chain_id,
                             'nonce': nonce,
@@ -56,3 +69,6 @@ class Contract:
         except Exception as e:
             print(e)
             return None
+        
+    def __str__(self) -> str:
+        return f'Wallet address: {self.wallet_address}\nToken address: {self.contract.address}\nNode URL: {self.nodeHttpsUrl}'
