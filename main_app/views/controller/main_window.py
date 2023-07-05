@@ -15,7 +15,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.ui.btn_stop.setEnabled(False)
         
-        self.transactions_info = pd.DataFrame(columns=['datetime', 'transaction_hash', 'maker'])
+        self.transactions_info = pd.DataFrame(columns=['datetime', 'type', 'tx_hash', 'buyer'])
         
         self.load_from_config()
         self.create_queues()
@@ -46,6 +46,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_stop.clicked.connect(self.stop)
     
     def connect_emit_signals(self):
+        self.ui.checkbox_call_transaction.stateChanged.connect(self.thread_integrate_api.change_call_transaction_state)
         self.thread_integrate_api.sig_new_transaction.connect(self.update_transactions_info)
         
     def create_queues(self):
@@ -69,8 +70,12 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def update_transactions_info(self, new_transaction: List[Transaction]):
         for transaction in new_transaction:
-            transaction_df = pd.DataFrame([[transaction.date_time, transaction.blockHash, transaction.maker]], columns=['datetime', 'block_hash', 'maker'])
+            transaction_df = pd.DataFrame([[transaction.date_time, transaction.type, transaction.id, transaction.maker]], columns=['datetime', 'type', 'tx_hash', 'buyer'])
             self.transactions_info = pd.concat([self.transactions_info, transaction_df], ignore_index=True)
+            
+        self.transactions_info.sort_values(by=['datetime'], inplace=True, ascending=False)
+        if len(self.transactions_info) > 100:
+            self.transactions_info = self.transactions_info.iloc[:100]
         self.ui.tableWidget.setRowCount(self.transactions_info.shape[0])
         self.ui.tableWidget.setColumnCount(self.transactions_info.shape[1])
         self.ui.tableWidget.setHorizontalHeaderLabels(self.transactions_info.columns)
@@ -83,10 +88,16 @@ class MainWindow(QtWidgets.QMainWindow):
         
     def set_state_qline(self, enable=False):
         self.ui.qline_token_address.setEnabled(enable)
+        self.ui.qline_pair_address.setEnabled(enable)
         self.ui.qline_whitelist.setEnabled(enable)
         self.ui.qline_withdrawal_wallet_address.setEnabled(enable)
         self.ui.qline_withdrawal_wallet_secret_key.setEnabled(enable)
         self.ui.qline_contract_abi.setEnabled(enable)
+    
+    def clear_table(self):
+        self.ui.tableWidget.setRowCount(0)
+        self.ui.tableWidget.clearContents()
+        self.transactions_info = pd.DataFrame(columns=['datetime', 'type', 'tx_hash', 'buyer'])
         
     def start(self):
         if not self.ui.qline_token_address.text():
@@ -107,12 +118,15 @@ class MainWindow(QtWidgets.QMainWindow):
         self.start_all_threads()
         self.ui.btn_start.setEnabled(False)
         self.ui.btn_stop.setEnabled(True)
+        self.ui.btn_start.setText('Running...')
         self.set_state_qline(False)
         
     def stop(self):
         self.stop_all_threads()
         self.ui.btn_start.setEnabled(True)
         self.ui.btn_stop.setEnabled(False)
+        self.ui.btn_start.setText('Start')
+        self.clear_table()
         self.set_state_qline(True)
         
         

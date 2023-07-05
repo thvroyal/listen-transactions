@@ -4,22 +4,23 @@ from ..utils.helpers import timestamp_to_datetime
 
 @dataclass
 class Transaction:
-    id: str
-    blockNumber: int
-    blockHash: str
-    timestamp: int
-    type: str
-    amountToken: float
-    amountETH: float
-    amountRef: float
-    price: float
-    priceETH: float
-    maker: str
+    id: str = None
+    blockNumber: int = None
+    blockHash: str = None
+    timestamp: int = None
+    type: str = None
+    amountToken: float = None
+    amountETH: float = None
+    amountRef: float = None
+    price: float = None
+    priceETH: float = None
+    maker: str = None
+    date_time: str = None
 
-    def __post_init__(self, transaction_dict):
+    def load_from_dict(self, transaction_dict):
         for key, value in transaction_dict.items():
             setattr(self, key, value)
         self.date_time = timestamp_to_datetime(self.timestamp)
     
-    def __str__(self):
-        return f'{self.date_time} {self.id} {self.type} {self.amountToken} {self.amountETH} {self.amountRef} {self.price} {self.priceETH} {self.maker}'
+    def __str__(self) -> str:
+        return f"Transaction: {self.id} - {self.date_time} - {self.amountToken} - {self.amountETH} - {self.amountRef} - {self.price} - {self.priceETH} - {self.maker}"

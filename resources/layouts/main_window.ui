@@ -49,7 +49,7 @@
            <rect>
             <x>10</x>
             <y>30</y>
-            <width>191</width>
+            <width>190</width>
             <height>50</height>
            </rect>
           </property>
@@ -86,7 +86,7 @@ QPushButton:disabled {
            <rect>
             <x>10</x>
             <y>110</y>
-            <width>191</width>
+            <width>190</width>
             <height>50</height>
            </rect>
           </property>
@@ -116,6 +116,29 @@ QPushButton:disabled {
           </property>
           <property name="text">
            <string>Stop</string>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="checkbox_call_transaction">
+          <property name="geometry">
+           <rect>
+            <x>22</x>
+            <y>180</y>
+            <width>190</width>
+            <height>50</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: white;
+font-size: 14px;</string>
+          </property>
+          <property name="text">
+           <string>Call Transaction </string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
           </property>
          </widget>
         </widget>
@@ -393,7 +416,7 @@ font-size: 16px;</string>
      <x>0</x>
      <y>0</y>
      <width>1105</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

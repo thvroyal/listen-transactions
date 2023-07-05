@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'resources/layouts/main_window.ui'
+# Form implementation generated from reading ui file 'd:\self_project\listen-transactions\resources\layouts\main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
         self.groupBox_3.setTitle("")
         self.groupBox_3.setObjectName("groupBox_3")
         self.btn_start = QtWidgets.QPushButton(self.groupBox_3)
-        self.btn_start.setGeometry(QtCore.QRect(10, 30, 191, 50))
+        self.btn_start.setGeometry(QtCore.QRect(10, 30, 190, 50))
         self.btn_start.setMinimumSize(QtCore.QSize(0, 50))
         self.btn_start.setStyleSheet("QPushButton {\n"
 "    border-radius: 8px;    \n"
@@ -53,7 +53,7 @@ class Ui_MainWindow(object):
 "}")
         self.btn_start.setObjectName("btn_start")
         self.btn_stop = QtWidgets.QPushButton(self.groupBox_3)
-        self.btn_stop.setGeometry(QtCore.QRect(10, 110, 191, 50))
+        self.btn_stop.setGeometry(QtCore.QRect(10, 110, 190, 50))
         self.btn_stop.setMinimumSize(QtCore.QSize(0, 50))
         self.btn_stop.setStyleSheet("QPushButton {\n"
 "    border-radius: 8px;    \n"
@@ -72,6 +72,12 @@ class Ui_MainWindow(object):
 "    background-color: rgba(255, 47, 50, .1);\n"
 "}")
         self.btn_stop.setObjectName("btn_stop")
+        self.checkbox_call_transaction = QtWidgets.QCheckBox(self.groupBox_3)
+        self.checkbox_call_transaction.setGeometry(QtCore.QRect(22, 180, 190, 50))
+        self.checkbox_call_transaction.setStyleSheet("color: white;\n"
+"font-size: 14px;")
+        self.checkbox_call_transaction.setIconSize(QtCore.QSize(16, 16))
+        self.checkbox_call_transaction.setObjectName("checkbox_call_transaction")
         self.gridLayout.addWidget(self.groupBox_3, 0, 1, 1, 1)
         self.groupBox = QtWidgets.QGroupBox(self.groupBox_2)
         self.groupBox.setStyleSheet("border: none;")
@@ -230,7 +236,7 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.label_10, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1105, 24))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1105, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -245,6 +251,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.btn_start.setText(_translate("MainWindow", "Start"))
         self.btn_stop.setText(_translate("MainWindow", "Stop"))
+        self.checkbox_call_transaction.setText(_translate("MainWindow", "Call Transaction "))
         self.label_9.setText(_translate("MainWindow", "Contract ABI"))
         self.label_5.setText(_translate("MainWindow", "Whitelist"))
         self.label_8.setText(_translate("MainWindow", "Withdrawal Wallet Secret Key"))
