@@ -118,6 +118,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.start_all_threads()
         self.ui.btn_start.setEnabled(False)
         self.ui.btn_stop.setEnabled(True)
+        self.thread_integrate_api.change_call_transaction_state(self.ui.checkbox_call_transaction.isChecked())
         self.ui.btn_start.setText('Running...')
         self.set_state_qline(False)
         
