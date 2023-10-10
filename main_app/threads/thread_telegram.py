@@ -18,7 +18,7 @@ class ThreadTelegram(QtCore.QThread):
 
     def check_buy(self, transaction: Transaction):
         print("Check buy:", transaction.type, transaction.maker)
-        if transaction.type.lower() == 'buy' and (transaction.maker.lower() not in self.white_list):
+        if transaction.type.lower() == 'buy' and (transaction.maker.lower().strip() not in self.white_list):
             # from address is spender
             print("Action: Buy")
             self.bot.send_message(
