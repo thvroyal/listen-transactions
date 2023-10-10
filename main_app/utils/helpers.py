@@ -88,9 +88,9 @@ class Contract:
 class SeleniumChrome:
     def __init__(self) -> None:
         self.check_platform()
-        option = webdriver.ChromeOptions()
-        option.add_argument("--headless")
-        self.driver = webdriver.Chrome(options=option)
+        # option = webdriver.ChromeOptions()
+        # option.add_argument("--headless")
+        self.driver = webdriver.Chrome()
 
     @staticmethod
     def check_platform():
