@@ -11,6 +11,7 @@ class ThreadTelegram(QtCore.QThread):
         self.transaction_queue = transaction_queue
 
         self.white_list = whitelist.lower().split(',')
+        self.white_list = [item.strip() for item in self.white_list]
 
         self.bot = Telegram()
         self.contract = Contract(wallet_address=withdrawal_wallet_address,
