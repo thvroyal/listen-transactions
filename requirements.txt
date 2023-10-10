@@ -1,0 +1,9 @@
+web3 
+python-socks
+web3-proxy-providers
+PyYaml
+telebot
+pandas
+PyQt5
+selenium
+beautifulsoup4
